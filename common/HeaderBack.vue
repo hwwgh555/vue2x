@@ -8,8 +8,6 @@
         <img v-if="'home'===icon" class="text-btn-img" src="./icon-home-active.png">
         <span class="text-btn-text">{{header.action}}</span>
       </a>
-      <!-- <a @click="switchState" class="header-icon header-icon-compose fr"></a> -->
-      <!-- <a class="header-icon header-icon-navigate fr"></a> -->
   </header>
 </template>
 
