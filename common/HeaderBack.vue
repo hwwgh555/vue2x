@@ -14,6 +14,7 @@
 </template>
 
 <script>
+// https://github.com/ElemeFE/mint-ui/blob/master/packages/header/src/header.vue mint-ui header的制作，它是如何思考的？
 // 对应图标表
 const IconType = {
   0: 'write',
