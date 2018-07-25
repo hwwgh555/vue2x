@@ -25,6 +25,8 @@ export default {
         this.closeLoadingTimer()
       } else {
         // 页面内其它按钮操作时，返回超时时调用 to do
+        // 2s之内设置父级isLoding为true时，如果不清除原来的定时器，会导致出现两个定时器，导致其中一个无法清除，如果跳转页面的话，会导致后面下一个页面直接出现Loading
+        this.closeLoadingTimer()
         this.setLoadingTimer()
       }
     }
@@ -40,11 +42,13 @@ export default {
       }, loadingTimer)
     },
     closeLoadingTimer () {
+      const self = this
+      clearTimeout(self.timer)
       Indicator.close()
     }
   },
   created () {
-    // 首次页面进入
+    // 首次页面进入--只要引入会自动运行一个定时器，是否显示，取决于isLoading的值
     this.setLoadingTimer()
   },
   destroyed () {
